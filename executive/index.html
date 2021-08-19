@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IF || Executives</title>
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+<link rel="stylesheet" href="other/executive.css">
+
+<link rel="stylesheet" href="../fonts/notosans/stylesheet.css">
+<link rel="stylesheet" href="../fonts/glacial/stylesheet.css">
+<link rel="stylesheet" href="../fonts/montserrat/stylesheet.css">
+<link rel="stylesheet" href="../fonts/playfair/stylesheet.css">
+<link rel="stylesheet" href="../fonts/ionicons.min.css">
+<link rel="stylesheet" href="../fonts/font-awesome.min.css">
+<link rel="stylesheet" href="../../indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../js/vendor/swiper.min.css">
+<link rel="stylesheet" href="../js/vendor/jquery.fullpage.min.css">
+<link rel="stylesheet" href="../js/vegas/vegas.min.css">
+<link rel="stylesheet" href="../css/pageloader.css">
+
+<link rel="stylesheet" href="../css/mainn.css">
+
+<link rel="stylesheet" href="../css/style-bg.css">
+<link rel="stylesheet" href="../css/style-font.css">
+<link rel="stylesheet" href="./style.css">
+<script src="js/vendor/modernizr-2.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="page-loader" id="page-loader">
+<div>
+<div class="icon ion-spin"></div>
+<p>Initiatives Foundation</p>
+</div>
+</div>
+
+
+<div class="bg"></div>
+
+<div class="hh">
+<p class="title">Executive Committee</p>
+<p class="title stitle">The team that made all this possible</p>
+</div>
+
+<div :class="['container', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']" id="app">
+<div class="team-container" type="button" onclick="showorhide()">
+<div class="person-list">
+<div class="person" v-for="(person,index) in persons" @click="selectPerson(index,$event)"><img class="person-img" :src="person.photo">
+<div class="person-details">
+<h2 class="person-title">{{person.name}}</h2>
+<p class="person-desc">- {{person.title}} -</p>
+</div>
+</div>
+</div>
+</div>
+<div class="team-detail">
+<div class="team-detail-inner" v-if="isOk">
+<div class="team-detail-left" :style=`background-image:url(${selectedPersonData.photo})`>
+<div class="team-detail-photo"><img :src="selectedPersonData.photo" alt="">
+</div>
+</div>
+<div class="team-detail-right">
+<div class="team-detail-bio">
+<div class="team-detail-header">
+<h2 class="person-title2">{{selectedPersonData.name}}</h2>
+<p class="person-desc2">{{selectedPersonData.title}}<br>{{selectedPersonData.institute}}</p>
+<div class="social">
+<a :href="selectedPersonData.social.facebook" target="_blank" class="fa fa-facebook"></a>
+<a :href="selectedPersonData.social.instagram" target="_blank" class="fa fa-instagram"></a>
+</div>
+</div>
+<div class="team-detail-bio-content tc" v-html="selectedPersonData.bio">
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer-end pmfooter" id="tcont">
+<div class="col col-12 cw">
+<p class="text-center" id="tcont3">Initiatives Foundation <br>Learn Together || Teach Together</p>
+</div>
+</footer>
+<div class="bbtn">
+<a href="../index.html"><</a>
+</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js'></script>
+<script src="other/script.js"></script>
+
+
+<script src="../js/vendor/jquery-1.12.4.min.js"></script>
+
+<script src="../js/vendor/scrolloverflow.min.js"></script>
+<script src="../js/vendor/all.js"></script>
+
+<script src="../js/jquery.downCount.js"></script>
+
+<script src="../js/form_script.js"></script>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
